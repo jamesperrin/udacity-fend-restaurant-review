@@ -186,7 +186,7 @@ nav h1 a {
     text-align: center;
     display: flex;
     flex-flow: row wrap;
-    align-content: center;
+    justify-content: center;
 }
 
 #restaurants-list li {
@@ -204,9 +204,6 @@ nav h1 a {
     background-color: #ccc;
     display: block;
     margin: 0;
-    /* max-width: 100%;
-    min-height: 248px;
-    min-width: 100%; */
     height: auto;
     width: 100%;
 }
@@ -258,6 +255,11 @@ nav h1 a {
 
 /* ====================== Restaurant Details ====================== */
 
+.inside {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 .inside header {
     position: fixed;
     top: 0;
@@ -283,7 +285,7 @@ nav h1 a {
 .inside #footer {
     bottom: 0;
     position: absolute;
-    width: 50%;
+    width: calc(50% - 50px);
 }
 
 #restaurant-name {
@@ -299,6 +301,8 @@ nav h1 a {
 
 #restaurant-img {
     width: 90%;
+    display: block;
+    border-radius: 25px 0 0 0;
 }
 
 #restaurant-address {
@@ -328,7 +332,8 @@ nav h1 a {
 }
 
 #reviews-container {
-    padding: 30px 40px 80px;
+    padding: 30px 40px;
+    width: 50%;
 }
 
 #reviews-container h2 {
@@ -341,7 +346,7 @@ nav h1 a {
 
 #reviews-list {
     margin: 0;
-    padding: 0;
+    padding: 0 0 20px 0;
 }
 
 #reviews-list li {
@@ -351,15 +356,148 @@ nav h1 a {
     list-style-type: none;
     margin: 0 0 30px;
     overflow: hidden;
-    padding: 0 20px 20px;
     position: relative;
     width: 85%;
+    border-radius: 25px 0;
+    padding: 0;
 }
 
 #reviews-list li p {
-    margin: 0 0 10px;
+    margin: 0 5px 10px 20px;
+}
+
+#reviews-list li p:nth-child(1),
+#reviews-list li p:nth-child(2) {
+    background-color: #333;
+    color: #FFF;
+    margin: 0;
+    padding: 15px 0;
+    display: inline-block;
+}
+
+#reviews-list li p:nth-child(1) {
+    padding-left: 10px;
+    width: calc(100% - 166px);
+    border-radius: 25px 0 0 0;
+    font-size: 1.5em;
+    border: 1px solid #333;
+}
+
+#reviews-list li p:nth-child(2) {
+    padding: 24px 25px 19px 24px;
+    width: auto;
+    margin: 0;
+    top: 0;
+}
+
+#reviews-list li p:nth-child(3) {
+    margin-top: 15px;
+    border-radius: 5px;
+    width: 80px;
+    height: 20px;
+    padding: 5px 10px;
+    background-color: orange;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
 }
 
 #restaurant-hours td {
     color: #666;
+}
+
+@media screen and (min-width: 1000px) {
+    #restaurant-img {
+        width: 415px;
+        height: 311px;
+    }
+    #restaurant-cuisine {
+        width: 415px;
+    }
+}
+
+/* 
+============================================
+SMALL SCREEN
+============================================
+*/
+
+@media screen and (min-width: 0) and (max-width: 880px) {
+    .inside header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    .inside header {
+        position: relative;
+    }
+    .inside #maincontent {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        min-height: 100px;
+    }
+    .inside #map-container {
+        background: blue none repeat scroll 0 0;
+        height: 15%;
+        height: 250px;
+        position: relative;
+        width: 100%;
+        right: 0;
+        left: 0;
+        top: 0;
+        order: 1;
+    }
+    #restaurant-container {
+        order: 2;
+        border-bottom: 1px solid #d9d9d9;
+        border-top: 1px solid #fff;
+        padding: 0 40px 30px;
+        width: 90%;
+    }
+    #restaurant-name {
+        font-size: 16pt;
+    }
+    /* 
+    ------------- 
+    REVIEWS
+    -------------
+     */
+    #reviews-container {
+        order: 3;
+        border-bottom: 1px solid #d9d9d9;
+        border-top: 1px solid #fff;
+        padding: 30px 40px 80px;
+        width: 90%;
+    }
+    .inside #breadcrumb {
+        width: calc(100% - 80px);
+    }
+    .inside #footer {
+        bottom: 0;
+        position: absolute;
+        width: calc(100% - 50px);
+    }
+    #reviews-container h2 {
+        font-size: 20pt;
+    }
+}
+
+@media screen and (min-width: 0) and (max-width: 360px) {
+    #reviews-list li p:nth-child(1),
+    #reviews-list li p:nth-child(2) {
+        padding: 15px 0;
+        display: block;
+    }
+    #reviews-list li p:nth-child(1) {
+        padding: 0 0 5px 20px;
+        width: 100%;
+        min-height: 10px;
+    }
+    #reviews-list li p:nth-child(2) {
+        padding: 5px 0 5px 20px;
+    }
 }
