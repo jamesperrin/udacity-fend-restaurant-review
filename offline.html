@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Sorry, You're Offline</title>
+</head>
+
+<body class="offline">
+    <!-- Beginning header -->
+    <header role="banner">
+        <!-- Beginning nav -->
+        <nav role="navigation">
+            <h1>
+                <a href="/" title="Restaurant Reviews Home Page">Restaurant Reviews</a>
+            </h1>
+        </nav>
+        <!-- Beginning breadcrumb -->
+        <ul id="breadcrumb" aria-label="Breadcrumb">
+            <li>
+                <a href="/" title="Restaurant Reviews Home Page">Home</a>
+            </li>
+        </ul>
+        <!-- End breadcrumb -->
+        <!-- End nav -->
+    </header>
+    <!-- End header -->
+
+    <div class="main-content">
+        <h1>Sorry, You're Offline</h1>
+
+        <p>It looks like you're offline. Please come back when you find an internet connection.</p>
+    </div>
+
+    <script type="application/javascript" charset="utf-8" src="service-worker.js"></script>
+
+    <footer id="footer" role="contentinfo" tabindex="0">
+        Copyright (c) 2017
+        <a href="/" title="Restaurant Reviews Home Page">
+            <strong>Restaurant Reviews</strong>
+        </a> All Rights Reserved.
+    </footer>
+</body>
+
+</html>

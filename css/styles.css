@@ -505,3 +505,42 @@ SMALL SCREEN
     height: 1px;
     overflow: hidden;
 }
+
+.offline header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.offline header {
+    position: relative;
+}
+
+.offline #breadcrumb {
+    width: calc(100% - 80px);
+}
+
+.offline .main-content {
+    border: 1.5px solid black;
+    margin: 20px auto;
+    max-width: 400px;
+    min-height: 200px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.offline .main-content p {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1.25em;
+}
+
+.offline .main-content h1 {
+    text-transform: uppercase;
+}
+
+.offline .main-content h1,
+.offline .main-content h2 {
+    text-align: center;
+}
