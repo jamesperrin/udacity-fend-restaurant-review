@@ -161,7 +161,7 @@ createRestaurantHTML = (restaurant) => {
     const image = document.createElement('img');
     image.className = 'restaurant-img';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    image.alt = `${restaurant.name} Restaurant`;
+    image.alt = `An image of ${restaurant.name} Restaurant`;
     image.title = `${restaurant.name} Restaurant`;
     image.setAttribute("aria-hidden", "true");
     li.append(image);
